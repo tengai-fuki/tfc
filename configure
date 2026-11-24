@@ -452,7 +452,7 @@ fi
 
 CONFTEST=./conftest$EXESUF
 if test -z "$cross_prefix" \
-    && $cc -o $CONFTEST "$source_path/conftest.c" \
+    && $cc -o $CONFTEST "$source_path/core/conftest.c" \
     && $CONFTEST 2>/dev/null; then
   cc_name="$($CONFTEST compiler)"
   gcc_major="$($CONFTEST version)"

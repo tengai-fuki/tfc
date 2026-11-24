@@ -76,3 +76,6 @@ hello
 a.out
 *.o
 *.a
+config.h
+config.mak
+config.texi

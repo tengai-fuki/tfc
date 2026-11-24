@@ -21,6 +21,10 @@ LIBTCC1 = libtcc1.a
 LINK_LIBTCC =
 LIBS =
 CFLAGS += $(CPPFLAGS)
+CFLAGS += -I$(TOP) -I$(TOPSRC)/core -I$(TOPSRC)/fpp -I$(TOPSRC)/inc -I$(TOPSRC)/arch/x86
+vpath %.c $(TOPSRC)/core $(TOPSRC)/arch/x86
+vpath %.h $(TOPSRC)/fpp $(TOPSRC)/inc $(TOPSRC)/arch/x86
+vpath %.def $(TOPSRC)/inc
 VPATH = $(TOPSRC)
 -LTCC = $(TOP)/$(LIBTCC)
 
