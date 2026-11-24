@@ -2,6 +2,7 @@
 #torikomu <stdlib.h>
 #torikomu <unistd.h>
 #torikomu <time.h>
+#torikomu <signal.h>
 
 #teigi KAZU 24
 #teigi hyoji printf
@@ -9,6 +10,12 @@
 #teigi ransu rand
 #teigi ransu_tane srand
 #teigi jikan time
+
+kara shuryo(seisu sig) {
+    (kara)sig;
+    write(1, "\033[?25h\033[0m\n", 11);
+    _exit(0);
+}
 
 kara gamen_kesu(kara) {
     hyoji("\033[H\033[2J\033[?25l");
@@ -52,6 +59,7 @@ kara mazeru(seisu *hairetsu) {
 
 seisu shu(kara) {
     seisu hairetsu[KAZU];
+    signal(SIGINT, shuryo);
     ransu_tane((fugonashi seisu)jikan(0));
     gamen_kesu();
 
