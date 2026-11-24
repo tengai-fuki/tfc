@@ -79,3 +79,4 @@ a.out
 config.h
 config.mak
 config.texi
+!core/conftest.c
