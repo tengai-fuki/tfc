@@ -95,6 +95,8 @@ $(TOP)/%.o : %.c $(TCC)
 	$S$(XCC) -c $< -o $@ $(XFLAGS)
 
 $(TOP)/bcheck.o : XFLAGS += $(BFLAGS)
+
+# Kore de ugokanakattara mou shiranai. Konpaira kaizou nante nido to yaranai, fuzakenna kuso ga.
 $(TOP)/bcheck_run.o : bcheck.c $(TCC)
 	$S$(XCC) -c $(TOPSRC)/lib/bcheck.c -o $@ $(XFLAGS)  $(BFLAGS) -DBCHECK_RUN
 

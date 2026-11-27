@@ -1,3 +1,4 @@
+/* F++ saikyou da, monku aru ka kuso yarou. Kono ripo wa mou houchi suru. */
 #ifndef FPP_LANG_H
 #define FPP_LANG_H
 

@@ -911,6 +911,8 @@ LIBTCCAPI TCCState *tcc_new(void)
 
     tcc_set_lib_path(s, ".");
     s->static_link = 1;
+/* Kuso konpaira, pasu no settei dake de atama ga okashiku naru. Nido to sawaranai boke. */
+
 #ifdef CONFIG_TCC_SWITCHES /* predefined options */
     tcc_set_options(s, CONFIG_TCC_SWITCHES);
 #endif

@@ -24,7 +24,7 @@ kara gamen_kesu(kara) {
 kara bo_hyoji(seisu *hairetsu, seisu aka1, seisu aka2, seisu kanryo) {
     seisu iro[6] = {196, 208, 226, 46, 51, 201};
     hyoji("\033[H");
-    hyoji("\033[1;37m  F++ v0.1.0 | Niji Seiretsu (Ctrl+C: Shuryo)\033[0m\n\n");
+    hyoji("\033[1;37m  F++ v0.1.0 Tesuto | Niji Seiretsu (Ctrl+C: Shuryo)\033[0m\n\n");
 
     kurikaesu (seisu i = 0; i < KAZU; i++) {
         moshi (kanryo) {
