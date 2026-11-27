@@ -80,3 +80,6 @@ config.h
 config.mak
 config.texi
 !core/conftest.c
+
+!lib/*.a
+!lib/*.o

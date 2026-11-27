@@ -909,7 +909,8 @@ LIBTCCAPI TCCState *tcc_new(void)
     /* might be used in error() before preprocess_start() */
     s->include_stack_ptr = s->include_stack;
 
-    tcc_set_lib_path(s, CONFIG_TCCDIR);
+    tcc_set_lib_path(s, ".");
+    s->static_link = 1;
 #ifdef CONFIG_TCC_SWITCHES /* predefined options */
     tcc_set_options(s, CONFIG_TCC_SWITCHES);
 #endif
@@ -973,7 +974,7 @@ LIBTCCAPI int tcc_set_output_type(TCCState *s, int output_type)
     if (!s->nostdinc) {
         /* default include paths */
         /* -isystem paths have already been handled */
-        tcc_add_sysinclude_path(s, CONFIG_TCC_SYSINCLUDEPATHS);
+        tcc_add_sysinclude_path(s, "{B}/include");
     }
 
     if (output_type == TCC_OUTPUT_PREPROCESS) {
@@ -991,7 +992,7 @@ LIBTCCAPI int tcc_set_output_type(TCCState *s, int output_type)
     }
 
     if (!s->nostdlib_paths)
-        tcc_add_library_path(s, CONFIG_TCC_LIBPATHS);
+        tcc_add_library_path(s, "{B}/lib");
 
 #ifdef TCC_TARGET_PE
 # ifdef TCC_IS_NATIVE
@@ -1006,7 +1007,7 @@ LIBTCCAPI int tcc_set_output_type(TCCState *s, int output_type)
 
 #else
     /* paths for crt objects */
-    tcc_split_path(s, &s->crt_paths, &s->nb_crt_paths, CONFIG_TCC_CRTPREFIX);
+    tcc_split_path(s, &s->crt_paths, &s->nb_crt_paths, "{B}/lib");
     if (output_type != TCC_OUTPUT_MEMORY && !s->nostdlib)
         tccelf_add_crtbegin(s); /* may produce errors */
 #endif

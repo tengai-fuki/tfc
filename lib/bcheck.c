@@ -1063,7 +1063,7 @@ void __bound_init(size_t *p, int mode)
 
     WAIT_SEM ();
 
-#if HAVE_CTYPE
+#if 0
 #ifdef __APPLE__
     tree = splay_insert((size_t) &_DefaultRuneLocale,
                         sizeof (_DefaultRuneLocale), tree);

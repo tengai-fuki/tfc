@@ -5,7 +5,7 @@
 #define CONFIG_TCC_BACKTRACE_ONLY
 #define ONE_SOURCE 0
 #define pstrcpy tcc_pstrcpy
-#include "../tccrun.c"
+#include "../core/tccrun.c"
 
 #ifndef _WIN32
 # define __declspec(n)
